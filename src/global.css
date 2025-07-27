@@ -1,0 +1,70 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; /* Define a fonte base da aplicação com fallback para outras sans-serif */
+  line-height: 1.5; /* Define a altura da linha para melhorar a legibilidade do texto */
+  font-weight: 400; /* Define o peso padrão da fonte como "regular" (400) */
+
+  background-color: var(--background);
+  color: var(--destructive);
+
+  font-synthesis: none; /* Impede que o navegador sintetize negrito ou itálico caso a fonte não tenha essas variações */
+  text-rendering: optimizeLegibility; /* Otimiza a renderização de texto para melhor legibilidade e ligaduras tipográficas */
+  -webkit-font-smoothing: antialiased; /* Suaviza o texto em navegadores baseados em WebKit (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale; /* Suaviza o texto em tons de cinza no Firefox para macOS */
+}
+
+/*PALETA DE CORES*/
+
+:root {
+  /* CORES PRIMÁRIAS */
+  --primary: rgba(0, 90, 255, 1);              /* Azul Corporativo */
+  --primary-foreground: rgba(255, 255, 255, 1); /* Branco */
+  --primary-glow: rgba(102, 153, 255, 1);       /* Azul Claro Brilhante */
+
+  /* CORES DE FUNDO E ESTRUTURA */
+  --background: rgba(246, 248, 251, 1);         /* Cinza Muito Claro */
+  --foreground: rgba(38, 42, 51, 1);            /* Cinza Escuro */
+  --card: rgba(255, 255, 255, 1);               /* Branco Puro */
+  --card-foreground: rgba(38, 42, 51, 1);       /* Texto dentro de cards */
+
+  /* CORES SECUNDÁRIAS */
+  --secondary: rgba(235, 240, 247, 1);          /* Cinza Claro */
+  --secondary-foreground: rgba(56, 61, 71, 1);  /* Cinza Médio */
+  --muted: rgba(240, 244, 248, 1);              /* Cinza Bem Claro */
+  --muted-foreground: rgba(117, 124, 139, 1);   /* Cinza Médio */
+
+  /* CORES DE STATUS */
+  --success: rgba(22, 163, 74, 1);              /* Verde */
+  --success-foreground: rgba(255, 255, 255, 1); /* Branco */
+  --warning: rgba(255, 193, 7, 1);              /* Laranja/Amarelo */
+  --warning-foreground: rgba(255, 255, 255, 1); /* Branco */
+  --destructive: rgba(255, 59, 59, 1);          /* Vermelho */
+  --destructive-foreground: rgba(255, 255, 255, 1); /* Branco */
+
+  /* CORES DE INTERAÇÃO */
+  --accent: rgba(22, 163, 74, 1);               /* Verde igual ao success */
+  --accent-foreground: rgba(255, 255, 255, 1);  /* Branco */
+  --border: rgba(225, 229, 237, 1);             /* Cinza Claro */
+  --input: rgba(225, 229, 237, 1);              /* Igual ao border */
+  --ring: rgba(0, 90, 255, 1);                  /* Azul Primary */
+
+  /* CORES DE SIDEBAR */
+  --sidebar-background: rgba(250, 250, 250, 1);        /* Cinza Muito Claro */
+  --sidebar-foreground: rgba(66, 66, 71, 1);           /* Cinza Escuro */
+  --sidebar-primary: rgba(25, 25, 25, 1);              /* Cinza Muito Escuro */
+  --sidebar-accent: rgba(244, 244, 245, 1);            /* Cinza Claro */
+
+  /* GRADIENTES */
+  --gradient-primary: linear-gradient(135deg, rgba(0, 90, 255, 1), rgba(102, 153, 255, 1));
+  --gradient-secondary: linear-gradient(135deg, rgba(240, 244, 248, 1), rgba(235, 240, 247, 1));
+  --gradient-accent: linear-gradient(135deg, rgba(22, 163, 74, 1), rgba(18, 178, 78, 1));
+
+  /* SOMBRAS */
+  --shadow-soft: 0 2px 8px -2px rgba(0, 90, 255, 0.1);
+  --shadow-medium: 0 4px 16px -4px rgba(0, 90, 255, 0.15);
+  --shadow-strong: 0 8px 32px -8px rgba(0, 90, 255, 0.2);
+
+  /* CORES ESPECIAIS */
+  --green-500: rgba(34, 197, 94, 1);
+  --white: rgba(255, 255, 255, 1);
+}
+
