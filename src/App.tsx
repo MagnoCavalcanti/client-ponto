@@ -6,7 +6,7 @@ export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/:empresa" element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

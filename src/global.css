@@ -4,7 +4,7 @@
   font-weight: 400; /* Define o peso padrão da fonte como "regular" (400) */
 
   background-color: var(--background);
-  color: var(--destructive);
+  color: var(--foreground);
 
   font-synthesis: none; /* Impede que o navegador sintetize negrito ou itálico caso a fonte não tenha essas variações */
   text-rendering: optimizeLegibility; /* Otimiza a renderização de texto para melhor legibilidade e ligaduras tipográficas */

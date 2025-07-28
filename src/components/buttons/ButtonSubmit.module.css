@@ -1,0 +1,15 @@
+.buttonSubmit{
+    background: var(--gradient-primary);
+    color: var(--primary-foreground);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    font-size: 20px;
+    font-variant: bold;
+}
+
+.buttonSubmit:hover{
+    opacity: 0.9;
+}
