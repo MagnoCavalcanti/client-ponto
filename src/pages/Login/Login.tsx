@@ -54,8 +54,7 @@ export function Login () {
                 </form>
             </Card>
             <footer className={Style.footer}>
-                <p>© 2025 EmpresaREP- Todos os direitos reservados</p>
-                <p>Versão 0.0.1</p>
+                <p>© 2025 EmpresaREP - Todos os direitos reservados</p>
                 <p>Suporte técnico: suporte@sistemarep.com</p>
             </footer>
         </>
