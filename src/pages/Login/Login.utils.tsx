@@ -9,7 +9,8 @@ export const handleSubmit = (
     e: React.FormEvent<HTMLFormElement>, 
     dataForm: { user: string; password: string }, 
     navigate: any, 
-    empresa: string
+    empresa: string,
+    setError: (mensagem: string | null) => void
 ) => {
     e.preventDefault()
     
@@ -21,9 +22,8 @@ export const handleSubmit = (
     if(auth(userData)){
         // Aqui você pode adicionar navegação ou outras ações após login
         navigate(`/${empresa}/dashboard`)
-    } else {
-        alert("Usuário ou senha incorretos!")
-
+    }else{
+        setError("Os dados informados estão incorretos")
     }
 }
 

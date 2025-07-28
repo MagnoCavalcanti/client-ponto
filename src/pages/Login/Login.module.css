@@ -4,6 +4,17 @@
     gap: 20px;
 }
 
+.errorMessage{
+    background-color: rgb(254, 242, 242);
+    border: 1px solid rgb(254, 202, 202);
+    color: var(--destructive);
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
 .footer{
     text-align: center;
     margin-top: 20px;

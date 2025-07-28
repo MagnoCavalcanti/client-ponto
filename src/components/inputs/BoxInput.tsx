@@ -5,10 +5,11 @@ interface InputProps {
     placeholder: string;
     label: string;
     name?: string;
+    value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const BoxInput = ({ type, placeholder, label, name, onChange }: InputProps) => {
+export const BoxInput = ({ type, placeholder, label, name, value, onChange }: InputProps) => {
     return (
         <div className={Style.boxInput}>
             <label htmlFor={type} className={Style.label}>{label}</label>
@@ -17,6 +18,7 @@ export const BoxInput = ({ type, placeholder, label, name, onChange }: InputProp
                 className={Style.input} 
                 placeholder={placeholder} 
                 name={name}
+                value={value}
                 onChange={onChange}
             />
         </div>

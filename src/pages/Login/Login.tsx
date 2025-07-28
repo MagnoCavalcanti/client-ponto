@@ -5,7 +5,7 @@ import { BoxInput } from "../../components/inputs/BoxInput"
 import { Card } from "../../components/cards/Card"
 import { handleSubmit } from "./Login.utils"
 import { ButtonSubmit } from "../../components/buttons/ButtonSubmit"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export function Login () {
     let empresaParams = useParams()
@@ -17,6 +17,18 @@ export function Login () {
         user: '',
         password: ''
     })
+    //estado para mensagem de erro
+    const [errorMessage, setErrorMessage] = useState<string | null>()
+
+    // Zerar inputs quando mensagem de erro aparecer
+    useEffect(() => {
+        if (errorMessage) {
+            setDataForm({
+                user: '',
+                password: ''
+            })
+        }
+    }, [errorMessage])
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>){
         setDataForm((dataForm) => ({
@@ -24,6 +36,10 @@ export function Login () {
             [event.target.name]: event.target.value,
         }))
         
+        // Limpar mensagem de erro quando o usuário começar a digitar
+        if (errorMessage) {
+            setErrorMessage(null)
+        }
     }
 
     if (empresas.find(empresaMock => empresaMock.nome.toLowerCase() == empresa) == undefined){
@@ -35,12 +51,20 @@ export function Login () {
             <Card>
                 <h3 style={{textAlign: "center"}}>Fazer login</h3>
                 <p style={{textAlign: "center"}}>Entre com suas credenciais para acessar o sistema.</p>
-                <form onSubmit={(e) => handleSubmit(e, dataForm, navigate, empresa!)} className={Style.formLogin}>
+                
+                {errorMessage && (
+                    <div className={Style.errorMessage}>
+                        {errorMessage}
+                    </div>
+                )}
+                
+                <form onSubmit={(e) => handleSubmit(e, dataForm, navigate, empresa!, setErrorMessage)} className={Style.formLogin}>
                     <BoxInput 
                         type="text" 
                         placeholder="Usuário" 
                         label="Usuário" 
                         name="user"
+                        value={dataForm.user}
                         onChange={handleChange}
                     />
                     <BoxInput 
@@ -48,6 +72,7 @@ export function Login () {
                         placeholder="Senha" 
                         label="Senha" 
                         name="password"
+                        value={dataForm.password}
                         onChange={handleChange}
                     />
                     <ButtonSubmit>Entrar</ButtonSubmit>
