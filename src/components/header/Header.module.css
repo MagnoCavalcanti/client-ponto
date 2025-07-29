@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+
+.background{
+    background-color: var(--card);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 80px;
+}
+
+.headerLeft{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: calc(.5rem * 0);
+    margin-left: calc(.5rem * calc(1 - 0))
+}
+
+.title{
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.paragraph{
+    margin: 0;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    color: var(--muted-foreground);
+}
