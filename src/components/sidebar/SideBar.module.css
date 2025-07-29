@@ -1,13 +1,13 @@
 .sidebarBackground{
-    background-color: var(--sidebar-background);
+    background-color: var(--card);
     color: var(--sidebar-foreground);
     width: 280px;
-    height: 100vh;
+    height: calc(100vh - 114px);
     border-right: 1px solid var(--border);
     box-shadow: var(--shadow-soft);
     position: fixed;
     left: 0;
-    top: 0;
+    top: 114px;
     z-index: 100;
     overflow-y: auto;
 }
