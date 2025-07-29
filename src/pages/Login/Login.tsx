@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from "react-router"
 import Style from "./Login.module.css"
-import { empresas } from "../../data/empresa.mock"
 import { BoxInput } from "../../components/inputs/BoxInput"
 import { Card } from "../../components/cards/Card"
 import { handleSubmit } from "./Login.utils"
@@ -17,6 +16,7 @@ export function Login () {
         user: '',
         password: ''
     })
+
     //estado para mensagem de erro
     const [errorMessage, setErrorMessage] = useState<string | null>()
 
@@ -40,10 +40,6 @@ export function Login () {
         if (errorMessage) {
             setErrorMessage(null)
         }
-    }
-
-    if (empresas.find(empresaMock => empresaMock.nome.toLowerCase() == empresa) == undefined){
-        return <h1>Errou a página otário!</h1>
     }
 
     return (
