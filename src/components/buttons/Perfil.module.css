@@ -1,0 +1,78 @@
+.perfilBotao{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+    background-color: var(--card);
+}
+
+.perfilBotao:hover{
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.dropdownContainer {
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+    width: 224px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: var(--popover);
+    padding: 4px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 50;
+}
+
+.userInfo {
+    padding: 8px 8px 6px 8px;
+}
+
+.userInfoContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userName {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.userEmail {
+    font-size: 12px;
+    line-height: 1;
+    color: var(--muted-foreground);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border);
+    margin: 4px 0;
+}
+
+.dropdownButton {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdownButton:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+
+.dropdownButtonIcon {
+    margin-right: 8px;
+    height: 16px;
+    width: 16px;
+}
