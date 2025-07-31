@@ -1,0 +1,81 @@
+.headerDashboard{
+    margin: none;
+
+}
+
+
+.title{
+    margin: none;
+    margin-block-start: 1em;
+    margin-block-end: 0em;
+}
+
+.subtitle{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    color: var(--muted-foreground);
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.content{
+    display: flex;
+}
+
+.cardTitle{ 
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 5px;
+}
+
+.icons{
+    color: var(--primary);
+}
+
+
+
+.employeesList{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.employees{
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 6px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employees:hover{
+    background-color: var(--muted);
+}
+
+.name{
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.profession{
+    color: var(--muted-foreground);
+}
+
+.entry{
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.status{
+    background-color: blue;
+    color: var(--primary-foreground);
+    padding: .125rem .5rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    font-size: .75rem;
+    line-height: 1rem;
+}
