@@ -5,6 +5,13 @@
 
   background-color: var(--background);
   color: var(--foreground);
+  
+  p{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
 
   font-synthesis: none; /* Impede que o navegador sintetize negrito ou itálico caso a fonte não tenha essas variações */
   text-rendering: optimizeLegibility; /* Otimiza a renderização de texto para melhor legibilidade e ligaduras tipográficas */
