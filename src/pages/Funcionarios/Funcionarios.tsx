@@ -4,6 +4,7 @@ import InputStyle from "../../components/inputs/BoxInput.module.css"
 import { employees } from "../../data/register.mock"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../components/tables/Table"
 import { ButtonSubmit } from "../../components/buttons/ButtonSubmit"
+import { Plus } from "lucide-react"
 
 export const Funcionarios = () => {
     const [ searchBar, setSearchBar ] = useState("")
@@ -21,7 +22,7 @@ export const Funcionarios = () => {
                     <p className={Style.subtitle}>Gerencie os funcionários cadastrados no sistema</p>
                 </div>
 
-                <ButtonSubmit>
+                <ButtonSubmit icon={Plus}>
                     Novo Funcionário
                 </ButtonSubmit>
             </div>  
