@@ -9,6 +9,8 @@
     transition: all 200ms ease;
     font-size: 20px;
     font-variant: bold;
+    display: flex;
+    align-items: center;
 }
 
 .buttonSubmit:hover{
