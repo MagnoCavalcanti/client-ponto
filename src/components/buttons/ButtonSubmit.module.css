@@ -1,6 +1,7 @@
 .buttonSubmit{
     background: var(--gradient-primary);
     color: var(--primary-foreground);
+    max-height: 60px;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
