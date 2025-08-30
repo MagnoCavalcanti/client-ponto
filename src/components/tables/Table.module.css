@@ -1,0 +1,19 @@
+.table{
+    margin: 40px 0;
+    width: 100%;
+    font-size: 15px;
+}
+
+.tableHeader{
+    width: 100%;
+    
+}
+
+.tableRow:hover{
+    background-color: var(--secondary);
+}
+
+.tableCell{
+    border-bottom: 1px solid var(--border);
+    padding: 10px 30px;
+}
