@@ -1,18 +1,49 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Style from "./Funcionario.module.css"
 import InputStyle from "../../components/inputs/BoxInput.module.css"
-import { employees } from "../../data/register.mock"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../components/tables/Table"
 import { ButtonSubmit } from "../../components/buttons/ButtonSubmit"
 import { Plus } from "lucide-react"
+import { getFuncionarios } from "../../lib/apiFuncionarios"
+
+interface Employee {
+    id: number;
+    nome: string;
+    matricula: number;
+    pis: number;
+    empresa_id: number;
+    funcao: string;
+    grupo: string;
+    cpf: string; 
+}
 
 export const Funcionarios = () => {
     const [ searchBar, setSearchBar ] = useState("")
-    console.log(searchBar);
+    const [ employees, setEmployees ] = useState<Employee[]>([])
+    
+    
+    useEffect(() => {
+        console.log("teste de dentro");
+        
+        const request = async () => {
+            console.log("teste de dentro da promisse");
+            
+            try {
+                const funcionarios = await getFuncionarios()
+                console.log("funcionarios" + funcionarios);
+                
+                setEmployees(funcionarios)
+            } catch (error) {
+                console.error("Erro no useEffect:", error);
+            }
+        }
+        request()
+    }, [])
+
     
 
-    const keysEmployees = Object.keys(employees[0])
-    const filterEmployees = employees.filter(employee => employee.name.toLowerCase().includes(searchBar.toLowerCase()))
+    const keysEmployees = employees.length > 0 ? Object.keys(employees[0]) : [] //fznd verificação para não impedir a requisição a API
+    const filterEmployees = employees.filter(employee => employee.nome.toLowerCase().includes(searchBar.toLowerCase()))
 
     return (
         <>
@@ -35,7 +66,7 @@ export const Funcionarios = () => {
                     <TableHeader>
                         <TableRow>
                             {keysEmployees
-                                .filter((key) => key !== "id")
+                                .filter((key) => key !== "id" && key !== "empresa_id")
                                 .map((key) => (
                                     <TableHead key={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</TableHead>
                                 ))}
@@ -45,7 +76,7 @@ export const Funcionarios = () => {
                         {filterEmployees.map((employee) => (
                             <TableRow key={employee.id}>
                                 {Object.entries(employee)
-                                    .filter(([key]) => key !== "id")
+                                    .filter(([key]) => key !== "id" && key !== "empresa_id")
                                     .map(([_, valor], idx) => (
                                         <TableCell key={idx}>{valor}</TableCell>
                                     ))}
