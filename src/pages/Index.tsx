@@ -4,12 +4,11 @@ import { SideBar } from "../components/sidebar/SideBar";
 import { ErrorPage } from "./Error/Error";
 import { Dashboard } from "./Dashboard/Dashboard";
 import { Funcionarios } from "./Funcionarios/Funcionarios";
+import { Dispositivos } from "./Dispositivos/Dispositivos";
 
 export function Index() {
     const enterprise = useParams()
     const location = useLocation()
-    console.log(location.pathname)
-    console.log(enterprise.empresa);
     
 
     const renderPage = () => {
@@ -18,6 +17,8 @@ export function Index() {
                 return <Dashboard/>
             case `/${enterprise.empresa}/funcionarios`:
                 return <Funcionarios/>
+            case `/${enterprise.empresa}/dispositivos`:
+                return <Dispositivos/>
 
             default:
                 return <ErrorPage/>//retirar depois, já que é redundante

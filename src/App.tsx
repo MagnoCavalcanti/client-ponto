@@ -24,6 +24,12 @@ export function App() {
             <Index />
           </ProtectedRoute>
         } />
+        <Route path="/:empresa/dispositivos" element={
+          <ProtectedRoute>
+            <Index />
+          </ProtectedRoute>
+        } />
+        
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </BrowserRouter>
