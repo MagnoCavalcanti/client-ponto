@@ -1,0 +1,28 @@
+.legend{
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.divider{
+    margin: 10px -20px;
+}
+
+.boxInput{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.boxInput input{
+    width: 170px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.boxInput select{
+    width: 170px;
+    height: 25px;
+    border-radius: 5px;
+}
