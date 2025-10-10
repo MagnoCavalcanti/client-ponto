@@ -14,7 +14,6 @@ interface LoginResponse {
 
 export async function login({ username, password }: User): Promise<boolean> {
   try {
-    console.log(username + " - " + password);
     
     const response = await apiLogin.post<LoginResponse>("/login",
         { username, password }, // envia JSON
