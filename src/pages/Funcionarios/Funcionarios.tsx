@@ -5,21 +5,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { ButtonSubmit } from "../../components/buttons/ButtonSubmit"
 import { Plus } from "lucide-react"
 import { getFuncionarios } from "../../lib/apiFuncionarios"
+import type { Funcionario } from "../../types/Funcionario"
 
-interface Employee {
-    id: number;
-    nome: string;
-    matricula: number;
-    pis: number;
-    empresa_id: number;
-    funcao: string;
-    grupo: string;
-    cpf: string; 
-}
+
 
 export const Funcionarios = () => {
     const [ searchBar, setSearchBar ] = useState("")
-    const [ employees, setEmployees ] = useState<Employee[]>([])
+    const [ employees, setEmployees ] = useState<Funcionario[]>([])
     
     
     useEffect(() => {
@@ -65,21 +57,30 @@ export const Funcionarios = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            {keysEmployees
-                                .filter((key) => key !== "id" && key !== "empresa_id")
-                                .map((key) => (
-                                    <TableHead key={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</TableHead>
-                                ))}
+                            {[
+                                "nome", // força o nome a ser o primeiro
+                                ...keysEmployees.filter(
+                                    (key) => key !== "id" && key !== "empresa_id" && key !== "nome"
+                                ),
+                                ].map((key) => (
+                                <TableHead key={key}>
+                                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                                </TableHead>
+                            ))}
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {filterEmployees.map((employee) => (
                             <TableRow key={employee.id}>
-                                {Object.entries(employee)
-                                    .filter(([key]) => key !== "id" && key !== "empresa_id")
-                                    .map(([_, valor], idx) => (
-                                        <TableCell key={idx}>{valor}</TableCell>
-                                    ))}
+                                {[
+                                    ["nome", employee.nome ?? ""], // força nome a ser o primeiro
+                                    ...Object.entries(employee).filter(
+                                        ([key]) => key !== "id" && key !== "empresa_id" && key !== "nome"
+                                    ),
+                                    ].map(([_, valor], idx) => (
+                                    <TableCell key={idx}>{valor}</TableCell>
+                                ))}
+
                             </TableRow>
                         ))}
                     </TableBody>
