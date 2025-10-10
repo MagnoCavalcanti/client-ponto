@@ -1,8 +1,13 @@
 import { LogOut, Settings, User, UserRound } from "lucide-react"
 import { useState } from "react"
 import Style from "./Perfil.module.css"
+import { handleQuit } from "./Perfil.utils"
+import { useNavigate, useParams } from "react-router"
 
 export const Perfil = () => {
+    const navigate = useNavigate()
+    let empresaParams = useParams()
+    let empresa = empresaParams.empresa?.toLowerCase()
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     return (
         <>
@@ -29,7 +34,7 @@ export const Perfil = () => {
                   <span>Configurações</span>
                 </button>
                 <div className={Style.divider} />
-                <button className={Style.dropdownButton}>
+                <button className={Style.dropdownButton} onClick={() => handleQuit(navigate, empresa)}>
                   <LogOut className={Style.dropdownButtonIcon} />
                   <span>Sair</span>
                 </button>
