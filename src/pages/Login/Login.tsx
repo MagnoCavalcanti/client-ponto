@@ -1,15 +1,16 @@
-import { useNavigate, useParams } from "react-router"
+import { useParams } from "react-router"
 import Style from "./Login.module.css"
 import { BoxInput } from "../../components/inputs/BoxInput"
 import { Card } from "../../components/cards/Card"
 import { handleSubmit } from "./Login.utils"
 import { ButtonSubmit } from "../../components/buttons/ButtonSubmit"
 import { useState, useEffect } from "react"
+import { useAuth } from "../../hooks/useAuth"
 
 export function Login () {
     let empresaParams = useParams()
     let empresa = empresaParams.empresa?.toLowerCase()
-    let navigate = useNavigate()
+    const { login: loginContext } = useAuth()
 
     //valores do form
     const [dataForm, setDataForm] = useState({
@@ -54,7 +55,7 @@ export function Login () {
                     </div>
                 )}
                 
-                <form onSubmit={(e) => handleSubmit(e, dataForm, navigate, empresa!, setErrorMessage)} className={Style.formLogin}>
+                <form onSubmit={(e) => handleSubmit(e, dataForm, loginContext, empresa!, setErrorMessage)} className={Style.formLogin}>
                     <BoxInput 
                         type="text" 
                         placeholder="Usuário" 
